@@ -1,95 +1,55 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+import { useState } from 'react'
+import { createPost, deletePost, updatePost} from '@/services/services'
+import { HtmlFrame } from './frame'
+
 
 export default function Home() {
+  
+  const [id, setID] = useState<String>()
+  const [title, setTitle] = useState<String>()
+  const [desc, setDesc] = useState<String>()
+
+
+  const create = async () => await createPost(title, desc)
+  const update = async () => await updatePost(title, desc,id)
+  const delet = async () => await deletePost(id)
+
+  const updatePage =  () => window.location.reload()
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    <>
+    <main style={{height: '100vh', display: 'grid', gridTemplateColumns: '1fr', gridTemplateRows: '200px 50px 150px 400px', alignItems: 'center', justifyContent: 'center', gap:'2rem', width: '10rem', margin: '0 auto'}}>
+    <section style={{display: 'grid', justifyContent: 'center',  gap: '0.3rem'}}>
+        <label style={{textAlign: 'center'}}>Criar Post</label>
+        <span>Title: <input onChange={((e) => setTitle(e.target.value))} type="text" /></span>
+        <span>Desc: <input onChange={((e) => setDesc(e.target.value))} type="text" /></span>
+        <button onClick={create}>Criar</button>
+      </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <section style={{display: 'grid', justifyContent: 'center', gap: '0.3rem'}}>
+          <label  style={{textAlign: 'center'}}>Alterar Post</label>
+          <span>Id: <input onChange={((e) => setID(e.target.value))} type="text" /></span>
+          <span>Title: <input onChange={((e) => setTitle(e.target.value))} type="text" /></span>
+          <span>Desc: <input onChange={((e) => setDesc(e.target.value))} type="text" /></span>
+          <button onClick={update}>Alterar</button>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+      <section style={{display: 'grid', justifyContent: 'center', gap: '0.3rem'}}>
+          <label  style={{textAlign: 'center'}}>Deletar Post</label>
+          <span>Id: <input onChange={((e) => setID(e.target.value))} type="text" /></span>
+          <button onClick={delet}>Deletar</button>
+          <p style={{position: 'absolute', top: '50vh'}}>http://localhost:3000/api/blog
+          <button style={{padding: '0.3rem', marginLeft: '1rem'}} onClick={updatePage}>Atualizar</button>
           </p>
-        </a>
-      </div>
+      </section>
+    
+    <HtmlFrame/>
+
     </main>
+    </>
+
   )
 }
+
