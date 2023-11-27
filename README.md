@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+<a id="0"></a>
+# API Rest com Next
 
-```bash
+### Tópicos 
+
+:small_blue_diamond: [Descrição do projeto](#1)
+
+:small_blue_diamond: [Funcionalidades](#2)
+
+:small_blue_diamond: [EndPoints](#3)
+
+:small_blue_diamond: [Dados](#4)
+
+:small_blue_diamond: [Como rodar a aplicação](#5)
+
+:small_blue_diamond: [Linguagens, dependencias e libs utilizadas](#6)
+
+
+<a id="1"></a>
+##  :memo: Descrição do projeto 
+
+Este projeto tem como objetivo criar uma **API** implementando uma arquitetura **REST**.
+
+
+<a id="2"></a>
+##  :books: Funcionalidades
+
+:heavy_check_mark: **Buscar Posts**: Requisição GET à API com retorno dos posts
+
+:heavy_check_mark: **Criar Post**: Requisição POST à API com os dados do post
+
+:heavy_check_mark: **Alterar Post**: Requisição PUT à API com os dados a serem modificados
+
+:heavy_check_mark: **Delete Post**: Requisição DELETE à API com identificador a ser deletado
+
+
+<a id="3"></a>
+##  :o: Endpoints
+
+ **GET** : /api/blog
+ **POST**: /api/blog
+ **PUT**: /api/blog/[id]
+ **DELETE**: /api/blog/[id]
+
+<a id="4"></a>
+##  :floppy_disk: Dados
+
+Dentro de [lib/data.ts](https://github.com/claudiomss/APIRestNext/blob/master/lib/data.ts) existe uma variável **posts** e **funções** para gerenciamento do mesmo. 
+
+### Posts: 
+
+![ddd](https://github.com/claudiomss/APIRestNext/blob/master/screenshot/data.png?raw=true)
+
+---
+|title|desc|date|id|
+| -------- |-------- |-------- |--------
+|Evolução |Evolução é um processo no qual ocorrem mudanças nos seres...|2023-11-26T07:4012.589Z|1700984420274|
+
+
+
+<a id="5"></a>
+##  :arrow_forward: Como rodar a aplicação 
+
+Clone o projeto em sua máquina: 
+
+```
+git clone https://github.com/claudiomss/APIRestNext.git
+```
+Instale as dependências:
+
+```
+npm i
+```
+Iniciar aplicação:
+
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<a id="6"></a>
+##  :wrench:Linguagens, dependencias e libs utilizadas
+- HTML
+- CSS
+- Javascript
+- Typescript
+- Next
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[ Voltar para o topo](#0)
