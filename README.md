@@ -43,8 +43,11 @@ Este projeto tem como objetivo criar uma **API** implementando uma arquitetura *
 ##  :o: Endpoints
 
  **GET** : /api/blog
+ 
  **POST**: /api/blog
+ 
  **PUT**: /api/blog/[id]
+ 
  **DELETE**: /api/blog/[id]
 
 ---
