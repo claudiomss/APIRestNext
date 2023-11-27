@@ -17,12 +17,14 @@
 
 :small_blue_diamond: [Linguagens, dependencias e libs utilizadas](#6)
 
+---
 
 <a id="1"></a>
 ##  :memo: Descrição do projeto 
 
 Este projeto tem como objetivo criar uma **API** implementando uma arquitetura **REST**.
 
+---
 
 <a id="2"></a>
 ##  :books: Funcionalidades
@@ -35,6 +37,7 @@ Este projeto tem como objetivo criar uma **API** implementando uma arquitetura *
 
 :heavy_check_mark: **Delete Post**: Requisição DELETE à API com identificador a ser deletado
 
+---
 
 <a id="3"></a>
 ##  :o: Endpoints
@@ -43,6 +46,8 @@ Este projeto tem como objetivo criar uma **API** implementando uma arquitetura *
  **POST**: /api/blog
  **PUT**: /api/blog/[id]
  **DELETE**: /api/blog/[id]
+
+---
 
 <a id="4"></a>
 ##  :floppy_disk: Dados
@@ -59,6 +64,7 @@ Dentro de [lib/data.ts](https://github.com/claudiomss/APIRestNext/blob/master/li
 |Evolução |Evolução é um processo no qual ocorrem mudanças nos seres...|2023-11-26T07:4012.589Z|1700984420274|
 
 
+---
 
 <a id="5"></a>
 ##  :arrow_forward: Como rodar a aplicação 
@@ -78,6 +84,8 @@ Iniciar aplicação:
 ```
 npm run dev
 ```
+
+---
 
 <a id="6"></a>
 ##  :wrench:Linguagens, dependencias e libs utilizadas
